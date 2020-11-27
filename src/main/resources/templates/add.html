@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新的联系人</title>
+    <link rel="stylesheet" href="../static/add/add.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2 align="center">添加联系人</h2>
+    </div>
+    <form action="/checkadd" class="form" th:object="${add}" method="post">
+        <div class="form-control">
+            <label>姓名</label>
+            <input type="text" placeholder="姓名" th:field="*{username}" oninput="checkInputs('username')"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label>电话</label>
+            <input type="text" placeholder="电话" th:field="*{tel}" oninput="checkInputs('tel')"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label>邮箱</label>
+            <input type="email" placeholder="邮箱" th:field="*{email}" oninput="checkInputs('email')"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label>住址</label>
+            <input type="text" placeholder="住址" th:field="*{addr}" oninput="checkInputs('address')"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label>QQ号</label>
+            <input type="text" placeholder="QQ号" th:field="*{qq}" oninput="checkInputs('qq')"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <button>提交</button>
+    </form>
+</div>
+<script src="../static/add/add.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>userList</title>
+    <link rel="stylesheet" href="../static/format/format.css">
+</head>
+<body class="container">
+<br/>
+<h1>用户列表</h1>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>电话</th>
+            <th>邮箱</th>
+            <th>住址</th>
+            <th>QQ号</th>
+            <th>编辑</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="m:${session.table.getTabledata()}">
+            <td th:text="${m.getUsername()}"></td>
+            <td th:text="${m.getTel()}"></td>
+            <td th:text="${m.getEmail()}"></td>
+            <td th:text="${m.getAddr()}"></td>
+            <td th:text="${m.getQq()}"></td>
+            <td><button onclick="alter(this)">修改</button></td>
+            <td><button onclick="del(this)">删除</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <div class="col-sm-2 control-label">
+            <a href="add" class="btn btn-info" >添加</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../static/format/format.js"></script>
+</html>

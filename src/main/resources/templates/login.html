@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../static/login/login.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2 align="center">登录</h2>
+    </div>
+    <form class="form" onsubmit="return login()" th:object="${login}">
+        <div class="form-control">
+            <label>用户名</label>
+            <input type="text" th:field="*{username}" placeholder="用户名"/>
+        </div>
+        <div class="form-control">
+            <label>密码</label>
+            <input type="password" th:field="*{password}" placeholder="密码"/>
+        </div>
+        <button>提交</button>
+        <div class="form-control" align="center">
+            <br>
+            <label>测试用户名及密码:</label>
+            <br>
+            <label>用户名：kakuki</label>
+            <br>
+            <label>密码：12345678</label>
+        </div>
+    </form>
+</div>
+</body>
+    <script src="../static/login/login.js"></script>
+</html>
